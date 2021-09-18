@@ -1,0 +1,16 @@
+
+{
+  "name": "info-car-pl-exam-alert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "playwright": "^1.10.0"
+  }
+}
