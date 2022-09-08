@@ -14,7 +14,7 @@ var rateLimit;
 
 const regenerateBearerToken = async () => {
 	checking = true;
-	const browser = await playwright['firefox'].launch({headless: false});
+	const browser = await playwright['firefox'].launch({headless: true});
     const page = await browser.newPage({viewport: null});
     
     page.route('**', route => {
