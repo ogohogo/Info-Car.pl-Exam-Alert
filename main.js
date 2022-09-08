@@ -14,7 +14,7 @@ var rateLimit;
 
 const regenerateBearerToken = async () => {
 	checking = true;
-	const browser = await playwright['firefox'].launch({headless: false});
+	const browser = await playwright['firefox'].launch({headless: true});
     const page = await browser.newPage({viewport: null});
     
     page.route('**', route => {
@@ -76,7 +76,7 @@ async function get() {
 					rateLimit = false
 				}, 30 * 1000)
 
-                return await sendDiscordWebhook(`@everyone Wolny egzamin na kategorie B dnia ${days.day} na godzinę ${exam.time}`)
+                return await sendDiscordWebhook(`@everyone Wolny egzamin na kategorie ${config.category} dnia ${days.day} na godzinę ${exam.time}`)
             })
         })
     } catch (e) {
