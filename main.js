@@ -76,7 +76,7 @@ async function get() {
 					rateLimit = false
 				}, 30 * 1000)
 
-                return await sendDiscordWebhook(`@everyone Wolny egzamin na kategorie B dnia ${days.day} na godzinę ${exam.time}`)
+                return await sendDiscordWebhook(`@everyone Wolny egzamin na kategorie ${config.category} dnia ${days.day} na godzinę ${exam.time}`)
             })
         })
     } catch (e) {
