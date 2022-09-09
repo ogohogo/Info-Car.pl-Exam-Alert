@@ -1,4 +1,3 @@
-
 {
   "name": "info-car-pl-exam-alert",
   "version": "1.0.0",
@@ -10,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "https-proxy-agent": "^5.0.1",
     "node-fetch": "^2.6.1",
     "node-telegram-bot-api": "^0.59.0",
     "playwright": "^1.10.0"
