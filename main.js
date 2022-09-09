@@ -2,7 +2,7 @@ const fetch = require("node-fetch")
 const playwright = require('playwright');
 const HttpsProxyAgent = require("https-proxy-agent")
 
-const sendDiscordWebhook = require("./utils/webhook");
+const notify = require("./utils/webhook");
 const config = require("./config");
 
 console.log('\033c')
@@ -76,7 +76,7 @@ async function get() {
                     rateLimit = false
                 }, 30 * 1000)
 
-                return await sendDiscordWebhook(`@everyone Wolny egzamin na kategorie ${config.category} dnia ${days.day} na godzinę ${exam.time}`)
+                return await notify[config.notifyVia](`Wolny egzamin na kategorie ${config.category} dnia ${days.day} na godzinę ${exam.time}`)
             })
         })
     } catch (e) {
