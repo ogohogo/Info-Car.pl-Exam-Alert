@@ -13,5 +13,10 @@ module.exports = {
     category: 'B', //Kategoria Prawa Jazdy
     wordID: '', //id twojego wordu. Lista ID dostępna tutaj: https://pastebin.com/3zKNsYk3
     discordWebhookURL: '', //URL do Webhooka Discorda. Tam będą wysyłane twoje powiadomienia.
+    telegram: {
+        botToken: '',
+        chatId: ''
+    },
+    notifyVia: '', // W jaki sposob chcesz byc powiadomiony, telegram lub discord
     refreshTime: 5, //Co ile bot ma wysyłać requesty do serwisu info-car. W sekundach.
 }
