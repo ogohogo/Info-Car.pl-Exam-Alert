@@ -17,6 +17,14 @@ module.exports = {
         botToken: '',
         chatId: ''
     },
+    smsapi: {
+        // Tutaj token z uprawnieniami wysyłki generowany w https://ssl.smsapi.pl/react/oauth/manage
+        apiToken: 'TOKEN_HERE',
+        // Nazwa nadawcy lub null dla domyślnego
+        fromNumber: null,
+        //Numer pod jaki dostarczyć sms (przykładowy: 48123123123)
+        phoneNumber: '48123123123',
+    },
     notifyVia: '', // W jaki sposob chcesz byc powiadomiony, telegram lub discord
     refreshTime: 5, //Co ile bot ma wysyłać requesty do serwisu info-car. W sekundach.
 }
