@@ -34,4 +34,29 @@ module.exports = {
             })
         })
     },
+    pushover: async content => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+        var data = new URLSearchParams();
+        data.append("token", config.pushover.token);
+        data.append("user", config.pushover.user);
+        data.append("title", "InfoCar.pl");
+        data.append("message", content);
+        data.append("sound", config.pushover.sound);
+        data.append("priority", config.pushover.priority);
+        if (config.pushover.priority == 2) {
+            data.append("retry", config.pushover.retry);
+            data.append("expire", config.pushover.expire);
+        }
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: data,
+            redirect: 'follow'
+        };
+
+        await fetch("https://api.pushover.net/1/messages.json", requestOptions)
+    }
 }
